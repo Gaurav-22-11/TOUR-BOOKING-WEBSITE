@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="shortcut icon" type="image/x-icon" href="images/favicon.png">>
+
+        <!--=============== REMIXICONS ===============-->
+        <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+
+        <!--=============== CSS ===============-->
+        <link rel="stylesheet" href="states.css">
+        <link rel="stylesheet" href="styles.css">
+
+        <title>TOURS AND TRAVELS</title>
+        <style>
+            body,#slider,.wrap,
+            .slide-content {
+                margin: 0;
+                padding: 0;
+                font-family: Arial, Helvetica, sans-serif;
+                width: 100%;
+                height: 100vh;
+                overflow-x: hidden;
+            }
+
+            .wrap {
+                position: relative;
+            }
+
+            .slide {
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+            }
+
+            .slide1 {
+                background-image: url("images/UK/uk.jpg");
+            }
+            .slide2 {
+                background-image: url("images/UK/uk1.jpg");
+            }
+            .slide3 {
+                background-image: url("images/UK/uk2.jpg");
+            }
+            .slide4{
+            background-image: url("images/UK/uk3.jpg");
+            }
+            .slide5{
+            background-image: url("images/UK/uk4.jpg");
+            }
+            .slide6{
+            background-image: url("images/UK/uk5.jpg");
+            }
+            .slide7{
+            background-image: url("images/UK/uk6.jpg");
+            }
+            
+            
+
+            .slide-content {
+            display: flex;
+            flex-direction:row;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            }
+
+            .slide-content span {
+            font-size: 5rem;
+            color: #fff;
+            }
+
+            .arrow {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            margin-top: -35px;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            }
+
+            #arrow-left {
+            border-width: 30px 40px 30px 0;
+            border-color: transparent #fff transparent transparent;
+            left: 0;
+            margin-left: 30px;
+            }
+
+            #arrow-right {
+            border-width: 30px 0 30px 40px;
+            border-color: transparent transparent transparent #fff;
+            right: 0;
+            margin-right: 30px;
+            }
+
+        </style>
+    </head>
+    <body>
+        <header class="header" id="header">
+            <nav class="nav container">
+                <a href="#" class="nav__logo" style="font-family:'Times New Roman';">INDIA VOYAGES</a>
+
+                <div class="nav__menu" id="nav-menu">
+                    <ul class="nav__list">
+                        <li class="nav__item">
+                            <a href="#home" class="nav__link active-link">Home</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="#about" class="nav__link">About</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="#place" class="nav__link">Places</a>
+                        </li>
+                    </ul>
+                    
+                </div>
+            </nav>
+        </header>
+
+        <main class="main">
+            <!--==================== HOME ====================-->
+            <section class="home" id="home">
+                <div class="wrap">
+                <div id="arrow-left" class="arrow"></div>
+                <div id="slider">
+                    <div class="slide slide1">
+                        <div class="slide-content">
+                            <span></span>
+                        </div>
+                    </div>
+                    <div class="slide slide2">
+                        <div class="slide-content">
+                            <span></span>
+                        </div>
+                    </div>
+                    <div class="slide slide3">
+                        <div class="slide-content">
+                            <span></span>
+                        </div>
+                    </div>
+                    <div class="slide slide4">
+                        <div class="slide-content">
+                            <span></span>
+                        </div>
+                    </div>
+                    <div class="slide slide5">
+                        <div class="slide-content">
+                            <span></span>
+                        </div>
+                    </div>
+                    <div class="slide slide6">
+                        <div class="slide-content">
+                            <span></span>
+                        </div>
+                    </div>
+                    <div class="slide slide7">
+                        <div class="slide-content">
+                            <span></span>
+                        </div>
+                    </div>
+
+                </div>
+                <div id="arrow-right" class="arrow"></div>
+                </div>
+            </section>
+            <section>
+                <div>
+                    <section>
+                        <a href="https://forms.gle/z5oa1sPRVVGAm9FZ8"><br><br><h1 style="text-align:center">PLEASE CLICK HERE FOR THE REGISTRATON FORM</h1></a>
+                    </section>
+                </div>
+            </section>
+        </main>
+        <script>
+            let sliderImages = document.querySelectorAll(".slide"),
+            arrowLeft = document.querySelector("#arrow-left"),
+            arrowRight = document.querySelector("#arrow-right"),
+            current = 0;
+
+            // Clear all images
+            function reset() {
+            for (let i = 0; i < sliderImages.length; i++) {
+                sliderImages[i].style.display = "none";
+            }
+            }
+
+            // Init slider
+            function startSlide() {
+            reset();
+            sliderImages[0].style.display = "block";
+            }
+
+            // Show prev
+            function slideLeft() {
+            reset();
+            sliderImages[current - 1].style.display = "block";
+            current--;
+            }
+
+            // Show next
+            function slideRight() {
+            reset();
+            sliderImages[current + 1].style.display = "block";
+            current++;
+            }
+
+            // Left arrow click
+            arrowLeft.addEventListener("click", function() {
+            if (current === 0) {
+                current = sliderImages.length;
+            }
+            slideLeft();
+            });
+
+            // Right arrow click
+            arrowRight.addEventListener("click", function() {
+            if (current === sliderImages.length - 1) {
+                current = -1;
+            }
+            slideRight();
+            });
+
+            startSlide();
+        </script>
+        <footer class="footer section">
+            <div class="footer__container container grid">
+                <div class="footer__content grid">
+                    <div class="footer__data">
+                        <h3 class="footer__title">INDIA VOYAGES</h3>
+                        <p class="footer__description">INDIA REDISCOVERED<br>
+                            EXPERIENCES REDEFINED
+                        </p>
+                        <div>
+                            <a href="https://www.facebook.com/" target="_blank" class="footer__social">
+                                <i class="ri-facebook-box-fill"></i>
+                            </a>
+                            <a href="https://twitter.com/" target="_blank" class="footer__social">
+                                <i class="ri-twitter-fill"></i>
+                            </a>
+                            <a href="https://www.instagram.com/" target="_blank" class="footer__social">
+                                <i class="ri-instagram-fill"></i>
+                            </a>
+                            <a href="https://www.youtube.com/" target="_blank" class="footer__social">
+                                <i class="ri-youtube-fill"></i>
+                            </a>
+                        </div>
+                    </div>
+    
+                    <div class="footer__data">
+                        <h3 class="footer__subtitle">About</h3>
+                        <ul>
+                            <li class="footer__item">
+                                <a href="aboutus.html" class="footer__link">About Us</a>
+                            </li>
+                        </ul>
+                    </div>
+    
+                    <div class="footer__data">
+                        <h3 class="footer__subtitle">Company</h3>
+                        <ul>
+                            <li class="footer__item">
+                                <a href="team.html" class="footer__link">Team</a>
+                            </li>
+                            <li class="footer__item">
+                                <a href="links.html" class="footer__link">Important links</a>
+                            </li>
+                        </ul>
+                    </div>
+    
+                    <div class="footer__data">
+                        <h3 class="footer__subtitle">Support</h3>
+                        <ul>
+                            <li class="footer__item">
+                                <a href="faq.html" class="footer__link">FAQs</a>
+                            </li>
+                            <li class="footer__item">
+                                <a href="contact.html" class="footer__link">Support Center</a>
+                            </li>
+                            <li class="footer__item">
+                                <a href="contact.html" class="footer__link">Contact Us</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="footer__rights">
+                    <p class="footer__copy">&#169; 2021 INDIA. All rigths reserved.</p>
+                    <div class="footer__terms">
+                        <a href="TnC.html" class="footer__terms-link">Terms & Agreements</a>
+                        <a href="privacypolicy.html" class="footer__terms-link">Privacy Policy</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>

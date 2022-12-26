@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Node JS Express Form Submission Example - ItSolutionStuff.com</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  </head>
+  <body>
+    <div class="container">
+      <h1>INDIA VOYAGES SEASON 2021</h1>
+      <form action="/" method="POST">
+        <label>SELECT YOUR DESTINATION:</label><br>
+            <select>
+                <option>~~~~Select~~~~</option>
+                <option>JAMMU AND KASHMIR</option>
+                <option>LADAKH</option>
+                <option>HIMACHAL PRADESH</option>
+                <option>UTTARAKHAND</option>
+                <option>PUNJAB></option>
+                <option>HARYANA</option>
+                <option>RAJASTHAN</option>
+                <option>UTTAR PRADESH</option>
+                <option>BIHAR</option>
+                <option>JHARKHAND</option>
+                <option>WEST BENGAL</option>
+                <option>ODISHA</option>
+                <option>ASSAM</option>
+                <option>ARUNACHAL PRADESH</option>
+                <option>NAGALAND</option>
+                <option>MANIPUR</option>
+                <option>MIZORAM</option>
+                <option>TRIPURA</option>
+                <option>MEGHALAYA</option>
+                <option>SIKKIM</option>
+                <option>MADHYA PRADESH</option>
+                <option>CHHATTISGARH</option>
+                <option>GUJARAT</option>
+                <option>MAHARASHTRA</option>
+                <option>GOA</option>
+                <option>KARNATAKA</option>
+                <option>TELANGANA</option>
+                <option>ANDHRA PRADESH</option>
+                <option>KERALA</option>
+                <option>TAMIL NADU</option>
+                <option>DELHI</option>
+                <option>LAKSHADWEEP</option>
+                <option>ANDAMAN AND NICOBAR ISLANDS</option>
+            </select><br><br>
+            <label>FIRST NAME:</label><br><input type="text" placeholder="FIRST NAME"maxlength="100" required style="border-width:2px,border-style=inset"><br><br>
+            <label>MIDDLE NAME:</label><br><input type="text" placeholder="MIDDLE NAME"maxlength="100"><br><br>
+            <label>LAST NAME:</label><br><input type="text" placeholder="LAST NAME"maxlength="100" required><br><br>
+            <label>NUMBER OF TRAVELLERS:</label>
+                <select>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    <option>6</option>
+                    <option>7</option>
+                    <option>8</option>
+                    <option>9</option>
+                    <option>10</option>
+                </select><br><br>
+            <label>EMAIL ID:</label><br><input name="email" type="email" placeholder="EMAIL"maxlength="100" required><br><br>
+            <label>CONTACT NUMBER:</label><br><input type="text" placeholder="CONTACT"maxlength="10" required><br><br>
+            <label>ADDRESS:</label><br><input type="text" placeholder="ADDRESS" maxlength="150"><br><br>
+            <label>CITY:</label><br><input type="text" placeholder="CITY"maxlength="100" required><br><br>
+            <label>STATE:</label><br><input type="text" placeholder="STATE"maxlength="100" required><br><br>
+            <label>PINCODE:</label><br><input type="text" placeholder="PINCODE" maxlength="100" required><br><br>
+            <label>DATE OF BIRTH:</label><br><input type="date" placeholder="DOB"maxlength="100" required><br><br>
+            <label>WILL YOU BE REQUIRING ANY OF THE FOLLOWING:</label><br>
+            <input type="checkbox">Special seatings<br>
+            <input type="checkbox">Travel insurance<br>
+            <input type="checkbox">Dietary needs<br><br>
+            <input type="submit" style="background-color: hsl(52, 100%, 66%)" onclick="submitClick()"/>
+            <script>
+                function submitClick() 
+                {
+                  if (formValidation()) 
+                  {
+                    alert("Thank you for your time! Your details have been submitted!");
+                    return true;
+                  } 
+                  else 
+                  {
+                    return false;
+                  }
+                }
+                function formValidation() 
+                {
+                  flag = true;
+
+                  
+
+                  // Validate emails
+                  if (!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)* (\.\w{2,3})+$/.test(form.email.value)) //Regular expressions to validate email
+                  {
+                    //alert("Enter Valid Email Address!");
+                    //flag = false;
+                  }
+                }
+
+            </script>
+                          
+                
+        </form>
+    </body>
+</html>
